@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `produtos_ericsson`;
-create database produtos_ericsson;
-use produtos_ericsson;
+-- DROP DATABASE IF EXISTS `produtos_ericsson`;
+-- create database produtos_ericsson;
+-- use produtos_ericsson;
 
 create table categories (
     category_id bigint auto_increment,
@@ -51,8 +51,7 @@ insert into products (product_id, name, weight, price, quantity) values
 (7, 'Ericsson Network Manager', 0.00, 18000.00, 40),
 (8, 'Ericsson IoT Accelerator', 0.00, 12500.00, 30),
 (9, 'Ericsson MINI-LINK 6352', 9.50, 9800.00, 25),
-(10, 'Ericsson RAN Compute', 12.80, 21000.00, 10),
-(11, 'Teste MySql Docker', 12.09, 21.00, 23);
+(10, 'Ericsson RAN Compute', 12.80, 21000.00, 10);
 
 
 insert into product_category (product_id, category_id) values
