@@ -1,14 +1,25 @@
-# Imagem base com Java
-FROM eclipse-temurin:17-jdk-alpine
+# ================================
+# STAGE 1 - Build
+# ================================
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 
-# Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia o JAR para o container
-COPY target/*.jar app.jar
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Porta que a aplicação expõe
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# ================================
+# STAGE 2 - Runtime
+# ================================
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
 
-# Comando para iniciar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
