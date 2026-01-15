@@ -31,6 +31,8 @@ A API implementada permite consultar os dados das tabelas Produtos e Categorias.
 
 Para tornar o projeto fácil de transportar e testar em diferentes ambientes/máquinas, a API e o Banco de dados foram adicionados a containeres docker.
 
+*Observação: A senha do banco de dados está explicita no arquivo docker-compose, o que não é recomendável para sistemas produtivos. Entretanto, como este projeto possui apenas fins acadêmicos, não há impacto relevante decorrente desta prática.
+
 ## Esboço da topologia
 !["topologia simples"](img/representação_projeto.png "Topologia do projeto" )
 
