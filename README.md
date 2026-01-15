@@ -83,3 +83,4 @@ Para facilitar os testes com o Postman, importe a collection do localizada na ra
 
 - Mais endpoints de busca de equipamentos (busca de produtos por categoria);
 - Endpoints que implementam  Inserção, Atualização e Deleção de Registros nas tabelas Produtos e Categorias; 
+- Tratamento de Exceções (SQL Excpeptions como NoSuchElementException).
